@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Cheapy Cheapy Hull Cleaning — Free Hull Content & Donations</title>
+<meta name="description" content="Free hull cleaning content for small boats and cruisers. Donations appreciated!" />
+<meta name="theme-color" content="#109b6d" />
+<style>
+:root{
+  --accent:#109b6d;
+  --light-bg:#edf9f5;
+  --card-bg:#f3f6f4;
+  --card-text:#0f172a;
+  --muted:#6b7280;
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--font);background:var(--light-bg);color:var(--card-text);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+header{position:relative;background:linear-gradient(135deg,var(--accent),#14b480);color:#fff;padding:60px 20px 160px;text-align:center;overflow:hidden;}
+header h1{font-size:2.2rem;margin-bottom:8px;}
+header p{opacity:0.93;font-size:1rem;}
+.wave{position:absolute;bottom:0;left:0;width:200%;height:160px;background-repeat:repeat-x;opacity:0.85;animation:waveMove 10s linear infinite;}
+.wave:nth-child(3){background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="160"><path fill="%23ffffff" d="M0 80 Q150 20 300 80 T600 80 V160 H0 Z"/></svg>');animation-duration:8s;}
+.wave:nth-child(4){background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="160"><path fill="%23dfe3e4" d="M0 100 Q150 60 300 100 T600 100 V160 H0 Z"/></svg>');animation-duration:12s;}
+.wave:nth-child(5){background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="160"><path fill="%23bfc3c5" d="M0 120 Q150 80 300 120 T600 120 V160 H0 Z"/></svg>');animation-duration:16s;}
+@keyframes waveMove{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+main{padding:40px 16px;display:grid;gap:28px;justify-content:center;max-width:1100px;margin:0 auto;}
+.card{background:var(--card-bg);color:var(--card-text);border-radius:16px;box-shadow:0 8px 26px rgba(23,31,24,0.08);padding:22px;max-width:700px;width:100%;transition:transform .25s ease,box-shadow .25s ease;}
+.card h2{color:var(--accent);margin-bottom:12px;font-size:1.25rem;border-bottom:1px solid rgba(15,23,42,0.04);padding-bottom:8px;}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;}
+ul{list-style:none;padding-left:0;}
+a{color:var(--accent);text-decoration:none;font-weight:600;}
+input,select,textarea{width:100%;padding:12px 14px;margin-top:6px;margin-bottom:12px;border:1px solid rgba(15,23,42,0.08);border-radius:12px;font-size:1rem;font-family:var(--font);background:#fff;color:var(--card-text);transition:all .18s ease;box-shadow:0 2px 8px rgba(16,155,109,0.02);}
+input:hover,select:hover,textarea:hover{box-shadow:0 3px 12px rgba(16,155,109,0.03);}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 6px rgba(16,155,109,0.06);}
+input:-webkit-autofill,
+select:-webkit-autofill,
+textarea:-webkit-autofill { box-shadow:0 0 0px 1000px white inset !important; -webkit-text-fill-color:var(--card-text)!important; }
+select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='14' height='10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%231f6b4f' d='M7 10L0 0h14z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px;}
+.unit-row{display:flex;align-items:center;gap:10px;}
+.toggle{position:relative;display:inline-block;width:58px;height:30px;flex:0 0 58px;}
+.toggle input{opacity:0;width:0;height:0;}
+.slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background:#e6ece8;transition:.22s;border-radius:999px;box-shadow:inset 0 -2px 6px rgba(0,0,0,0.04);}
+.slider:before{content:"";position:absolute;height:24px;width:24px;left:3px;bottom:3px;background:#fff;border-radius:50%;transition:.22s;box-shadow:0 4px 12px rgba(11,110,79,0.06);}
+.toggle input:checked + .slider{background:linear-gradient(180deg,var(--accent),#0f7b59);}
+.toggle input:checked + .slider:before{transform:translateX(28px);}
+.unit-label-small{font-size:0.75rem;color:var(--muted);text-align:center;margin-top:2px;width:58px;}
+.checkbox-row{display:flex;align-items:center;gap:10px;margin-top:6px;}
+.checkbox-row input[type="checkbox"]{width:18px;height:18px;flex:0 0 18px;}
+#donateNow{background:var(--accent);color:#fff;border:none;padding:12px 22px;border-radius:28px;font-size:1.05rem;cursor:pointer;transition:transform .18s,box-shadow .18s,opacity .18s;opacity:0.84;animation:floatUpDown 6s ease-in-out infinite,pulseGlow 6s ease-in-out infinite;}
+#donateNow.enabled{box-shadow:0 12px 30px rgba(16,155,109,0.18);}
+#donateNow:not(.enabled){opacity:.5;pointer-events:none;box-shadow:none;animation:none;}
+@keyframes floatUpDown{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+@keyframes pulseGlow{0%,100%{box-shadow:0 0 8px rgba(16,155,109,0.12);}50%{box-shadow:0 0 20px rgba(16,155,109,0.22);}}
+footer{margin-top:28px;background:transparent;color:var(--card-text);padding:20px;text-align:center;}
+footer a{display:inline-block;margin-top:8px;font-size:1rem;color:var(--accent);font-weight:600;padding:8px 14px;border-radius:20px;text-decoration:none;border:1px solid rgba(16,155,109,0.1);}
+</style>
+</head>
+<body>
+<header>
+  <h1>Cheapy Cheapy Hull Cleaning</h1>
+  <p>All hull cleaning is completely free. Donations to support content creation are optional.</p>
+  <div class="wave"></div><div class="wave"></div><div class="wave"></div>
+</header>
+
+<main>
+  <div class="grid-2">
+    <div class="card">
+      <h2>Content</h2>
+      <ul>
+        <li>Soft-brush hull cleaning demonstrations</li>
+        <li>Step-by-step hull scraping examples</li>
+        <li>Eco-friendly, chemical-free methods</li>
+        <li>Tips for maintaining your boat at the dock or mooring</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Donations</h2>
+      <p style="opacity:.85;">All content is free — if you enjoy it and want to support, you can donate any amount. Donations help me buy gear and cover content costs.</p>
+      <div style="display:flex;justify-content:center;margin-top:12px;">
+        <button id="donateNow" class="enabled" onclick="window.location.href='https://www.paypal.com/donate?hosted_button_id=YOUR_BUTTON_ID';">Donate via PayPal</button>
+      </div>
+      <p style="margin-top:8px;font-size:.85rem;color:var(--muted);">You can donate any amount — even A$5 helps! Donations are completely voluntary.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Legal / Safety Notes</h2>
+    <ul>
+      <li>All hull cleaning is completely free. No payments or service exchanges are accepted.</li>
+      <li>Donations are completely optional and are only to support content creation.</li>
+      <li>Always follow marina and government rules — do not clean hulls without permission from property owners.</li>
+      <li>All content is for educational purposes and demonstration only.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Follow on YouTube</h2>
+    <p style="opacity:.85;">Check out all my hull cleaning videos on YouTube:</p>
+    <a href="https://youtube.com/@cheapycheapyhullcleaning?si=PgFhbxrsvsVob9o6" target="_blank">Cheapy Cheapy Hull Cleaning YouTube Channel</a>
+  </div>
+</main>
+
+<footer>
+  <p style="color:var(--card-text)">© 2025 Cheapy Cheapy Hull Cleaning — All Rights Reserved</p>
+  <a href="mailto:cheapyhullcleaning@gmail.com">cheapyhullcleaning@gmail.com</a>
+</footer>
+</body>
+</html>
